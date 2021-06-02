@@ -1,19 +1,53 @@
+////////////////////modaal//////////////////////////////////
+$(function () {
+	$('.js-open').click(function () {
+		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
+
+		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
+		$('#overlay, .modal-window[data-id="modal' + id + '"]').fadeIn();
+	});
+
+	$('.js-close').click(function () {
+		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
+
+		$('#overlay, .modal-window').fadeOut();
+	});
+});
+
+$(function () {
+	$('.js-open').click(function () {
+		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
+
+		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
+		$('#overlay, .modal-window2[data-id="modal' + id + '"]').fadeIn();
+	});
+
+	$('.js-close').click(function () {
+		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
+		
+		$('#overlay, .modal-window2').fadeOut();
+	});
+});
+
+////////////////////modaal//////////////////////////////////
+
+
 /*===========================================================*/
 /*機能編 4-1-5 ロゴアウトラインアニメーション*/
 /*===========================================================*/
 
 //SVGアニメーションの描画
 var stroke;
-stroke = new Vivus('mask', {//アニメーションをするIDの指定
-    start:'manual',//自動再生をせずスタートをマニュアルに
-    type: 'scenario-sync',// アニメーションのタイプを設定
-    duration: 10,//アニメーションの時間設定。数字が小さくなるほど速い
-    forceRender: false,//パスが更新された場合に再レンダリングさせない
-    animTimingFunction:Vivus.EASE,//動きの加速減速設定
-},
-function(){
-         $("#mask").attr("class", "done");//描画が終わったらdoneというクラスを追加
-}
+stroke = new Vivus('mask', { //アニメーションをするIDの指定
+		start: 'manual', //自動再生をせずスタートをマニュアルに
+		type: 'scenario-sync', // アニメーションのタイプを設定
+		duration: 10, //アニメーションの時間設定。数字が小さくなるほど速い
+		forceRender: false, //パスが更新された場合に再レンダリングさせない
+		animTimingFunction: Vivus.EASE, //動きの加速減速設定
+	},
+	function () {
+		$("#mask").attr("class", "done"); //描画が終わったらdoneというクラスを追加
+	}
 );
 
 /*===========================================================*/
@@ -26,7 +60,7 @@ function TextTypingAnime() {
 		var elemPos = $(this).offset().top - 50;
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
-        var thisChild = "";
+		var thisChild = "";
 		if (scroll >= elemPos - windowHeight) {
 			thisChild = $(this).children(); //spanタグを取得
 			//spanタグの要素の１つ１つ処理を追加
@@ -50,468 +84,526 @@ function TextTypingAnime() {
 /*===========================================================*/
 /*雪1*/
 particlesJS("pt1", {
-  "particles": {
-    "number": {
-      "value": 5,/*この数値を変更すると雪の数が増減できる*/
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "image",/*形状は画像を指定*/
-      "stroke": {
-        "width": 3,
-        "color": "#fff"
-      },
-      "image": {
-        "src": "img/snow.png",/*画像を指定*/
-        "width": 120,
-        "height": 120
-      }
-    },
-    "opacity": {
-      "value": 0.7,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 20,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-    },
-    "move": {
-      "enable": true,
-      "speed": 3,/*この数値を小さくするとゆっくりな動きになる*/
-      "direction": "bottom",/*下に向かって落ちる*/
-      "random": true,/*動きはランダム*/
-      "straight": false,/*動きをとどめない*/
-      "out_mode": "out",/*画面の外に出るように描写*/
-      "bounce": false,/*跳ね返りなし*/
-      "attract": {
-        "enable": true,
-        "rotateX": 300,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-      },
-      "onclick": {
-        "enable": false,
-      },
-      "resize": true
-    }
-  },
-  "retina_detect": true
-});	
+	"particles": {
+		"number": {
+			"value": 5,
+			/*この数値を変更すると雪の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 800
+			}
+		},
+		"color": {
+			"value": "#ffffff"
+		},
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 3,
+				"color": "#fff"
+			},
+			"image": {
+				"src": "img/snow.png",
+				/*画像を指定*/
+				"width": 120,
+				"height": 120
+			}
+		},
+		"opacity": {
+			"value": 0.7,
+			"random": false,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
+			}
+		},
+		"size": {
+			"value": 5,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 20,
+				"size_min": 0.1,
+				"sync": false
+			}
+		},
+		"line_linked": {
+			"enable": false,
+		},
+		"move": {
+			"enable": true,
+			"speed": 3,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom",
+			/*下に向かって落ちる*/
+			"random": true,
+			/*動きはランダム*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": true,
+				"rotateX": 300,
+				"rotateY": 1200
+			}
+		}
+	},
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
+			},
+			"onclick": {
+				"enable": false,
+			},
+			"resize": true
+		}
+	},
+	"retina_detect": true
+});
 
 /*雪2*/
 particlesJS("pt2", {
-  "particles": {
-    "number": {
-      "value": 150,/*この数値を変更すると雪の数が増減できる*/
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "image",/*形状は画像を指定*/
-      "stroke": {
-        "width": 3,
-        "color": "#fff"
-      },
-      "image": {
-        "src": "img/snow.png",/*画像を指定*/
-        "width": 120,
-        "height": 120
-      }
-    },
-    "opacity": {
-      "value": 0.7,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 20,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-    },
-    "move": {
-      "enable": true,
-      "speed": 3,/*この数値を小さくするとゆっくりな動きになる*/
-      "direction": "bottom",/*下に向かって落ちる*/
-      "random": true,/*動きはランダム*/
-      "straight": false,/*動きをとどめない*/
-      "out_mode": "out",/*画面の外に出るように描写*/
-      "bounce": false,/*跳ね返りなし*/
-      "attract": {
-        "enable": true,
-        "rotateX": 300,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-      },
-      "onclick": {
-        "enable": false,
-      },
-      "resize": true
-    }
-  },
-  "retina_detect": true
-});	
+	"particles": {
+		"number": {
+			"value": 150,
+			/*この数値を変更すると雪の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 800
+			}
+		},
+		"color": {
+			"value": "#ffffff"
+		},
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 3,
+				"color": "#fff"
+			},
+			"image": {
+				"src": "img/snow.png",
+				/*画像を指定*/
+				"width": 120,
+				"height": 120
+			}
+		},
+		"opacity": {
+			"value": 0.7,
+			"random": false,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
+			}
+		},
+		"size": {
+			"value": 5,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 20,
+				"size_min": 0.1,
+				"sync": false
+			}
+		},
+		"line_linked": {
+			"enable": false,
+		},
+		"move": {
+			"enable": true,
+			"speed": 3,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom",
+			/*下に向かって落ちる*/
+			"random": true,
+			/*動きはランダム*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": true,
+				"rotateX": 300,
+				"rotateY": 1200
+			}
+		}
+	},
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
+			},
+			"onclick": {
+				"enable": false,
+			},
+			"resize": true
+		}
+	},
+	"retina_detect": true
+});
 
 /*===========================================================*/
 /*印象編 5-6 桜が散る ※落ち葉の画像に変更しています*/
 /*===========================================================*/
 particlesJS("pt3", {
-	"particles":{
-		"number":{
-			"value":0,/*この数値を変更すると落ち葉の数が増減できる*/
-			"density":{
-				"enable":true,
-				"value_area":1121.6780303333778
+	"particles": {
+		"number": {
+			"value": 0,
+			/*この数値を変更すると落ち葉の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 1121.6780303333778
 			}
 		},
-		"color":{
-			"value":"#fff"
+		"color": {
+			"value": "#fff"
 		},
-		"shape":{
-			"type":"image",/*形状は画像を指定*/
-			"stroke":{
-				"width":0,
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 0,
 			},
-			"image":{
-				"src":"img/flower.png",/*画像を指定*/
-				"width":190,
-				"height":204
+			"image": {
+				"src": "img/flower.png",
+				/*画像を指定*/
+				"width": 190,
+				"height": 204
 			}
 		},
-		"opacity":{
-			"value":0.06409588744762158,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":1,
-				"opacity_min":0.1,
-				"sync":false
+		"opacity": {
+			"value": 0.06409588744762158,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
 			}
 		},
-		"size":{
-			"value":12,
-			"random":true,/*サイズをランダムに*/
-			"anim":{
-				"enable":false,
-				"speed":4,
-				"size_min":0.1,
-				"sync":false
+		"size": {
+			"value": 12,
+			"random": true,
+			/*サイズをランダムに*/
+			"anim": {
+				"enable": false,
+				"speed": 4,
+				"size_min": 0.1,
+				"sync": false
 			}
 		},
-		"line_linked":{
-			"enable":false,
+		"line_linked": {
+			"enable": false,
 		},
-		"move":{
-			"enable":true,
-			"speed":7,/*この数値を小さくするとゆっくりな動きになる*/
-			"direction":"bottom-right",/*右下に向かって落ちる*/
-			"random":false,/*動きはランダムにしない*/
-			"straight":false,/*動きをとどめない*/
-			"out_mode":"out",/*画面の外に出るように描写*/
-			"bounce":false,/*跳ね返りなし*/
-			"attract":{
-				"enable":false,
-				"rotateX":281.9177489524316,
-				"rotateY":127.670995809726
+		"move": {
+			"enable": true,
+			"speed": 7,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom-right",
+			/*右下に向かって落ちる*/
+			"random": false,
+			/*動きはランダムにしない*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": false,
+				"rotateX": 281.9177489524316,
+				"rotateY": 127.670995809726
 			}
 		}
 	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
 			},
-			"onclick":{
-				"enable":false,
+			"onclick": {
+				"enable": false,
 			},
-			"resize":true
+			"resize": true
 		}
 	},
-	"retina_detect":false
+	"retina_detect": false
 });
 
 /*落ち葉2*/
 particlesJS("pt4", {
-	"particles":{
-		"number":{
-			"value":0,/*この数値を変更すると落ち葉の数が増減できる*/
-			"density":{
-				"enable":true,
-				"value_area":1121.6780303333778
+	"particles": {
+		"number": {
+			"value": 0,
+			/*この数値を変更すると落ち葉の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 1121.6780303333778
 			}
 		},
-		"color":{
-			"value":"#fff"
+		"color": {
+			"value": "#fff"
 		},
-		"shape":{
-			"type":"image",/*形状は画像を指定*/
-			"stroke":{
-				"width":0,
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 0,
 			},
-			"image":{
-				"src":"img/flower.png",/*画像を指定*/
-				"width":190,
-				"height":204
+			"image": {
+				"src": "img/flower.png",
+				/*画像を指定*/
+				"width": 190,
+				"height": 204
 			}
 		},
-		"opacity":{
-			"value":0.06409588744762158,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":1,
-				"opacity_min":0.1,
-				"sync":false
+		"opacity": {
+			"value": 0.06409588744762158,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
 			}
 		},
-		"size":{
-			"value":12,
-			"random":true,/*サイズをランダムに*/
-			"anim":{
-				"enable":false,
-				"speed":4,
-				"size_min":0.1,
-				"sync":false
+		"size": {
+			"value": 12,
+			"random": true,
+			/*サイズをランダムに*/
+			"anim": {
+				"enable": false,
+				"speed": 4,
+				"size_min": 0.1,
+				"sync": false
 			}
 		},
-		"line_linked":{
-			"enable":false,
+		"line_linked": {
+			"enable": false,
 		},
-		"move":{
-			"enable":true,
-			"speed":7,/*この数値を小さくするとゆっくりな動きになる*/
-			"direction":"bottom-right",/*右下に向かって落ちる*/
-			"random":false,/*動きはランダムにしない*/
-			"straight":false,/*動きをとどめない*/
-			"out_mode":"out",/*画面の外に出るように描写*/
-			"bounce":false,/*跳ね返りなし*/
-			"attract":{
-				"enable":false,
-				"rotateX":281.9177489524316,
-				"rotateY":127.670995809726
+		"move": {
+			"enable": true,
+			"speed": 7,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom-right",
+			/*右下に向かって落ちる*/
+			"random": false,
+			/*動きはランダムにしない*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": false,
+				"rotateX": 281.9177489524316,
+				"rotateY": 127.670995809726
 			}
 		}
 	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
 			},
-			"onclick":{
-				"enable":false,
+			"onclick": {
+				"enable": false,
 			},
-			"resize":true
+			"resize": true
 		}
 	},
-	"retina_detect":false
+	"retina_detect": false
 });
 
 /*落ち葉3*/
 particlesJS("pt5", {
-	"particles":{
-		"number":{
-			"value":0,/*この数値を変更すると落ち葉の数が増減できる*/
-			"density":{
-				"enable":true,
-				"value_area":1121.6780303333778
+	"particles": {
+		"number": {
+			"value": 0,
+			/*この数値を変更すると落ち葉の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 1121.6780303333778
 			}
 		},
-		"color":{
-			"value":"#fff"
+		"color": {
+			"value": "#fff"
 		},
-		"shape":{
-			"type":"image",/*形状は画像を指定*/
-			"stroke":{
-				"width":0,
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 0,
 			},
-			"image":{
-				"src":"img/flower.png",/*画像を指定*/
-				"width":190,
-				"height":204
+			"image": {
+				"src": "img/flower.png",
+				/*画像を指定*/
+				"width": 190,
+				"height": 204
 			}
 		},
-		"opacity":{
-			"value":0.06409588744762158,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":1,
-				"opacity_min":0.1,
-				"sync":false
+		"opacity": {
+			"value": 0.06409588744762158,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
 			}
 		},
-		"size":{
-			"value":12,
-			"random":true,/*サイズをランダムに*/
-			"anim":{
-				"enable":false,
-				"speed":4,
-				"size_min":0.1,
-				"sync":false
+		"size": {
+			"value": 12,
+			"random": true,
+			/*サイズをランダムに*/
+			"anim": {
+				"enable": false,
+				"speed": 4,
+				"size_min": 0.1,
+				"sync": false
 			}
 		},
-		"line_linked":{
-			"enable":false,
+		"line_linked": {
+			"enable": false,
 		},
-		"move":{
-			"enable":true,
-			"speed":7,/*この数値を小さくするとゆっくりな動きになる*/
-			"direction":"bottom-right",/*右下に向かって落ちる*/
-			"random":false,/*動きはランダムにしない*/
-			"straight":false,/*動きをとどめない*/
-			"out_mode":"out",/*画面の外に出るように描写*/
-			"bounce":false,/*跳ね返りなし*/
-			"attract":{
-				"enable":false,
-				"rotateX":281.9177489524316,
-				"rotateY":127.670995809726
+		"move": {
+			"enable": true,
+			"speed": 7,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom-right",
+			/*右下に向かって落ちる*/
+			"random": false,
+			/*動きはランダムにしない*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": false,
+				"rotateX": 281.9177489524316,
+				"rotateY": 127.670995809726
 			}
 		}
 	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
 			},
-			"onclick":{
-				"enable":false,
+			"onclick": {
+				"enable": false,
 			},
-			"resize":true
+			"resize": true
 		}
 	},
-	"retina_detect":false
+	"retina_detect": false
 });
 
 /*落ち葉4*/
 particlesJS("pt6", {
-	"particles":{
-		"number":{
-			"value":0,/*この数値を変更すると落ち葉の数が増減できる*/
-			"density":{
-				"enable":true,
-				"value_area":1121.6780303333778
+	"particles": {
+		"number": {
+			"value": 0,
+			/*この数値を変更すると落ち葉の数が増減できる*/
+			"density": {
+				"enable": true,
+				"value_area": 1121.6780303333778
 			}
 		},
-		"color":{
-			"value":"#fff"
+		"color": {
+			"value": "#fff"
 		},
-		"shape":{
-			"type":"image",/*形状は画像を指定*/
-			"stroke":{
-				"width":0,
+		"shape": {
+			"type": "image",
+			/*形状は画像を指定*/
+			"stroke": {
+				"width": 0,
 			},
-			"image":{
-				"src":"img/flower.png",/*画像を指定*/
-				"width":190,
-				"height":204
+			"image": {
+				"src": "img/flower.png",
+				/*画像を指定*/
+				"width": 190,
+				"height": 204
 			}
 		},
-		"opacity":{
-			"value":0.06409588744762158,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":1,
-				"opacity_min":0.1,
-				"sync":false
+		"opacity": {
+			"value": 0.06409588744762158,
+			"random": true,
+			"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
 			}
 		},
-		"size":{
-			"value":12,
-			"random":true,/*サイズをランダムに*/
-			"anim":{
-				"enable":false,
-				"speed":4,
-				"size_min":0.1,
-				"sync":false
+		"size": {
+			"value": 12,
+			"random": true,
+			/*サイズをランダムに*/
+			"anim": {
+				"enable": false,
+				"speed": 4,
+				"size_min": 0.1,
+				"sync": false
 			}
 		},
-		"line_linked":{
-			"enable":false,
+		"line_linked": {
+			"enable": false,
 		},
-		"move":{
-			"enable":true,
-			"speed":7,/*この数値を小さくするとゆっくりな動きになる*/
-			"direction":"bottom-right",/*右下に向かって落ちる*/
-			"random":false,/*動きはランダムにしない*/
-			"straight":false,/*動きをとどめない*/
-			"out_mode":"out",/*画面の外に出るように描写*/
-			"bounce":false,/*跳ね返りなし*/
-			"attract":{
-				"enable":false,
-				"rotateX":281.9177489524316,
-				"rotateY":127.670995809726
+		"move": {
+			"enable": true,
+			"speed": 7,
+			/*この数値を小さくするとゆっくりな動きになる*/
+			"direction": "bottom-right",
+			/*右下に向かって落ちる*/
+			"random": false,
+			/*動きはランダムにしない*/
+			"straight": false,
+			/*動きをとどめない*/
+			"out_mode": "out",
+			/*画面の外に出るように描写*/
+			"bounce": false,
+			/*跳ね返りなし*/
+			"attract": {
+				"enable": false,
+				"rotateX": 281.9177489524316,
+				"rotateY": 127.670995809726
 			}
 		}
 	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
+	"interactivity": {
+		"detect_on": "canvas",
+		"events": {
+			"onhover": {
+				"enable": false,
 			},
-			"onclick":{
-				"enable":false,
+			"onclick": {
+				"enable": false,
 			},
-			"resize":true
+			"resize": true
 		}
 	},
-	"retina_detect":false
+	"retina_detect": false
 });
 
 
@@ -520,21 +612,21 @@ particlesJS("pt6", {
 /*===================================*/
 
 $('#wrapper').multiscroll({
-	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33','#504237', '#504237', '#504237'],//セクションごとの背景色設定
-	anchors: ['area1', 'area2', 'area3','area4','area5','area6'],//セクションとリンクするページ内アンカーになる名前
-	menu: '#menu',//上部ナビゲーションのメニュー設定
-	navigation: true,//右のナビゲーション出現、非表示は false
+	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33', '#504237', '#504237', '#504237'], //セクションごとの背景色設定
+	anchors: ['area1', 'area2', 'area3', 'area4', 'area5', 'area6'], //セクションとリンクするページ内アンカーになる名前
+	menu: '#menu', //上部ナビゲーションのメニュー設定
+	navigation: true, //右のナビゲーション出現、非表示は false
 	//navigationTooltips:['Area1', 'Area2', 'Area3','Area4','Area5'],//右のナビゲーション現在地時に入るテキスト
 	//loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
-	loopBottom: true,//最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
-    //※以下は今回のプラグインの組み合わせのみで使用。ページの途中でリロードしてもトップのタイピング出現
-    afterLoad: function(anchorLink, index){
-		if(index == 1){
+	loopBottom: true, //最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
+	//※以下は今回のプラグインの組み合わせのみで使用。ページの途中でリロードしてもトップのタイピング出現
+	afterLoad: function (anchorLink, index) {
+		if (index == 1) {
 			TextTypingAnime();
-		}	
+		}
 	}
 
-    
+
 });
 
 /*==================================================
@@ -543,39 +635,39 @@ $('#wrapper').multiscroll({
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function () {
-	TextTypingAnime();//印象編 8-10テキストがタイピング風に出現する関数を呼ぶ*/
-});// ここまで画面をスクロールをしたら動かしたい場合の記述
+	TextTypingAnime(); //印象編 8-10テキストがタイピング風に出現する関数を呼ぶ*/
+}); // ここまで画面をスクロールをしたら動かしたい場合の記述
 
 
 // ページが読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load',function(){
-    
-    //機能編 4-1-5 ロゴアウトラインアニメーション
-    $("#splash_logo").delay(3000).fadeOut('slow');//ロゴを3秒（3000ms）待機してからフェードアウト
+$(window).on('load', function () {
 
-    stroke.play();//SVGアニメーションの実行
-  
-    //=====ここからローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる    
-    $("#splash").delay(3000).fadeOut(800,function(){//ローディング画面を3秒（3000ms）待機してからフェードアウト
-    
-    $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与 
-	
-    //印象編 8-10テキストがタイピング風に出現
-	var element = $(".TextTyping");
-	element.each(function () {
-		var text = $(this).html();
-		var textbox = "";
-		text.split('').forEach(function (t) {
-			if (t !== " ") {
-				textbox += '<span>' + t + '</span>';
-			} else {
-				textbox += t;
-			}
+	//機能編 4-1-5 ロゴアウトラインアニメーション
+	$("#splash_logo").delay(3000).fadeOut('slow'); //ロゴを3秒（3000ms）待機してからフェードアウト
+
+	stroke.play(); //SVGアニメーションの実行
+
+	//=====ここからローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる    
+	$("#splash").delay(3000).fadeOut(800, function () { //ローディング画面を3秒（3000ms）待機してからフェードアウト
+
+		$('body').addClass('appear'); //フェードアウト後bodyにappearクラス付与 
+
+		//印象編 8-10テキストがタイピング風に出現
+		var element = $(".TextTyping");
+		element.each(function () {
+			var text = $(this).html();
+			var textbox = "";
+			text.split('').forEach(function (t) {
+				if (t !== " ") {
+					textbox += '<span>' + t + '</span>';
+				} else {
+					textbox += t;
+				}
+			});
+			$(this).html(textbox);
 		});
-		$(this).html(textbox);
-	});
-	TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
+		TextTypingAnime(); /* アニメーション用の関数を呼ぶ*/
 
-}); //=====ここまでローディングエリア（splashエリア）を0.8秒でフェードアウトした後に動かしたいJSをまとめる
-    
-});// ここまでページが読み込まれたらすぐに動かしたい場合の記述
+	}); //=====ここまでローディングエリア（splashエリア）を0.8秒でフェードアウトした後に動かしたいJSをまとめる
+
+}); // ここまでページが読み込まれたらすぐに動かしたい場合の記述

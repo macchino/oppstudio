@@ -2,7 +2,8 @@
 /* レイアウトのためのCSS */
 
 body{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Walter Turncoat',
+    sans-serif;
     text-transform: none;
     letter-spacing: 0.1em;
 	color: #fff;
@@ -79,6 +80,22 @@ body.appear h1{
 }
 .sentence {
     font-size: small;
+}
+/* //////////550px以下//////////// */
+@media screen and (max-width:550px) {
+    .title {
+        font-size: small;
+        color: darkslategray;
+    }
+
+    .title2 {
+        font-size: small;
+        color: goldenrod;
+    }
+
+    .sentence {
+        font-size: smaller;
+    }
 }
 /* area */
 .sp-bottom{
