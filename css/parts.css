@@ -88,13 +88,8 @@
 .no_scroll {
 	overflow: hidden;
 }
-/* ////////////////modaal//////////////////////////// */
+/* ////////////////End Of modaal//////////////////////////// */
 
-/*==================================================
-　機能編 4-1-5　ロゴアウトラインアニメーション
-===================================*/
-
-/* Loading背景画面設定　*/
 #splash {
     /*fixedで全面に固定*/
 	position: fixed;
@@ -109,14 +104,15 @@
 /* Loading画像中央配置　*/
 #splash_logo {
 	position: absolute;
+	display: flex;
 	top: 50%;
-	left: 50%;
+	left: 60%;
 	transform: translate(-50%, -50%);
 }
 
 /* Loading アイコンの大きさ設定　*/
 #splash_logo svg{
-    width:250px;
+    width: 800px;
 }
 
 /*=============== SVGアニメーション内の指定 =================*/
@@ -399,13 +395,13 @@ body.appear #container{
 
 #multiscroll-nav span{
 	background:transparent!important;
-	border-color:#fff!important;
+	border-color:#808000 !important;
 }
 
 /*右にある丸のナビゲーション現在地色*/
 
 #multiscroll-nav li .active span{
-	background:#fff!important;
+	background:#ffd700 !important;
 }
 
 /*左上のナビゲーション*/
