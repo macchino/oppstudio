@@ -29,6 +29,20 @@ $(function () {
 	});
 });
 
+$(function () {
+	$('.js-open').click(function () {
+		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
+
+		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
+		$('#overlay, .modal-window3[data-id="modal' + id + '"]').fadeIn();
+	});
+
+	$('.js-close').click(function () {
+		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
+		
+		$('#overlay, .modal-window3').fadeOut();
+	});
+});
 ////////////////////modaal//////////////////////////////////
 
 
@@ -257,11 +271,11 @@ particlesJS("pt2", {
 });
 
 $('#wrapper').multiscroll({
-	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33', '#504237', '#504237', '#504237'], //セクションごとの背景色設定
+	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33', '#0000ff', '#504237', '#504237'], //セクションごとの背景色設定
 	anchors: ['area1', 'area2', 'area3', 'area4', 'area5', 'area6'], //セクションとリンクするページ内アンカーになる名前
 	menu: '#menu', //上部ナビゲーションのメニュー設定
 	navigation: true, //右のナビゲーション出現、非表示は false
-	navigationTooltips:['Area1', 'Area2', 'Area3','Area4','Area5'],//右のナビゲーション現在地時に入るテキスト
+	navigationTooltips:['Top', 'About', 'Price', 'Flow', 'Feature'],//右のナビゲーション現在地時に入るテキスト
 	loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
 	loopBottom: true, //最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
 	//※以下は今回のプラグインの組み合わせのみで使用。ページの途中でリロードしてもトップのタイピング出現

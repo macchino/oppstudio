@@ -2,16 +2,6 @@
 
 /* //////////////////modaal////////////////////////// */
 /* 開くボタン */
-.button-open {
-	display: block;
-	margin: 0 auto;
-	width: 8rem;
-	padding: 1em;
-	background-color: #44B78B;
-	color: #eaeaea;
-	border-radius: 20rem;
-	cursor: pointer;
-}
 .button-open2 {
 	display: block;
 	margin: 0 auto;
@@ -22,15 +12,46 @@
 	border-radius: 20rem;
 	cursor: pointer;
 }
+.button-open3 {
+	display: block;
+	margin: 0 auto;
+	width: 8rem;
+	padding: 1em;
+	background-color: #44B78B;
+	color: #eaeaea;
+	border-radius: 20rem;
+	cursor: pointer;
+}
+.button-open4 {
+	display: block;
+	margin: 0 auto;
+	width: 8rem;
+	padding: 1em;
+	background-color: #ffd343;
+	color: #eaeaea;
+	border-radius: 20rem;
+	cursor: pointer;
+}
+.button-open5 {
+	display: block;
+	margin: 0 auto;
+	width: 8rem;
+	padding: 1em;
+	background-color: #ffd343;
+	color: #eaeaea;
+	border-radius: 20rem;
+	cursor: pointer;
+}
 /* モーダルウィンドウ */
+/* Mobile-sizeも変更すること */
 .modal-window {
 	display: none;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 640px;
+	width: 487px;
+	height: 780px;
 	background-color: #44B78B;
 	border-radius: 5px;
 	z-index: 11;
@@ -42,8 +63,22 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 680px;
+	width: 487px;
+	height: 780px;
+	background-color: #0C4B33;
+	border-radius: 5px;
+	z-index: 11;
+	padding: 2rem;
+}
+
+.modal-window3 {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 375px;
+	height: 812px;
 	background-color: #0C4B33;
 	border-radius: 5px;
 	z-index: 11;
@@ -63,6 +98,30 @@
 	cursor: pointer;
 }
 .button-close2 {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	padding: 1em;
+	background-color: #44B78B;
+	color: #eaeaea;
+	border-radius: 20rem;
+	cursor: pointer;
+}
+.button-close3 {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	padding: 1em;
+	background-color: #44B78B;
+	color: #eaeaea;
+	border-radius: 20rem;
+	cursor: pointer;
+}
+.button-close4 {
 	position: absolute;
 	top: 90%;
 	left: 50%;
@@ -201,9 +260,6 @@ body.appear #container{
 }
 }
 
-/*==================================================
-　機能編 5-3-2　中心から外に線が伸びる（中央）
-===================================*/
 #menu li a{
     /*線の基点とするためrelativeを指定*/
 	position: relative;
@@ -229,10 +285,6 @@ body.appear #container{
 #menu li a:hover::after {
     transform: scale(1, 1);/*X方向にスケール拡大*/
 }
-
-/*===========================================================*/
-/*機能編 9-1-1	縦線が動いてスクロールを促す*/
-/*===========================================================*/
 
 /*スクロールダウン全体の場所*/
 .scrolldown1{
@@ -289,10 +341,6 @@ body.appear #container{
 	}
 }
 
-/*==================================================
-　機能編 7-1-1	背景が流れる（左から右）
-===================================*/
-
 /*== ボタン共通設定 */
 .btn{
     /*アニメーションの起点とするためrelativeを指定*/
@@ -342,7 +390,7 @@ body.appear #container{
 }
 
 /*===========================================================*/
-/*印象編　8-10 テキストがタイピング風に出現*/
+ テキストがタイピング風に出現*/
 /*===========================================================*/
 
 .TextTyping span {
@@ -365,7 +413,7 @@ body.appear #container{
 
 
 /*===========================================================*/
-/*印象編　5-5　雪が降る、5-6　桜が散る*/
+/* 雪が降る、5-6　桜が散る */
 /*===========================================================*/
 
 .particle{ 
@@ -439,24 +487,24 @@ body.appear #container{
 }
 
 #right4{
-	background:url("../img/03.jpg") no-repeat center;
+	background:url("../img/mockup1.png") no-repeat center;
 	background-size:cover;
 }
 
-#left4{
+/* #left4{
 	background:url("../img/04.jpg") no-repeat center;
 	background-size:cover;
-}
+} */
 
 #right5{
 	background:url("../img/05.jpg") no-repeat center;
 	background-size:cover;
 }
 
-#left5{
+/* #left5{
 	background:url("../img/06.jpg") no-repeat center;
 	background-size:cover;
-}
+} */
 
 #right6{
 	background:url("../img/07.jpg") no-repeat center;
@@ -512,21 +560,17 @@ body.appear #container{
 }
     
 #left4 .sp-top{
-	background:url("../img/03.jpg") no-repeat top center;
+	background:url("../img/mockup1.png") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
     
 #left4 .sp-bottom{
-	background:url("../img/04.jpg") no-repeat top center;
-	background-size:cover;
-    height: 50vh;
+	display: none;
 }
 
 #left5 .sp-top{
-	background:url("../img/05.jpg") no-repeat top center;
-	background-size:cover;
-    height: 50vh;
+	display: none;
 }
     
 #left5 .sp-bottom{
@@ -544,6 +588,46 @@ body.appear #container{
 .sp-bottom{
 	padding:20px;
 }
-	
+.modal-window {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 375px;
+	height: 812px;
+	background-color: #44B78B;
+	border-radius: 5px;
+	z-index: 11;
+	padding: 2rem;
+}
+
+.modal-window2 {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 375px;
+	height: 812px;
+	background-color: #0C4B33;
+	border-radius: 5px;
+	z-index: 11;
+	padding: 2rem;
+}
+
+.modal-window3 {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 375px;
+	height: 812px;
+	background-color: #0C4B33;
+	border-radius: 5px;
+	z-index: 11;
+	padding: 2rem;
+}
 }
 
