@@ -51,7 +51,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 487px;
-	height: 780px;
+	height: 640px;
 	background-color: #44B78B;
 	border-radius: 5px;
 	z-index: 11;
@@ -64,7 +64,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 487px;
-	height: 780px;
+	height: 640px;
 	background-color: #0C4B33;
 	border-radius: 5px;
 	z-index: 11;
@@ -78,7 +78,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 375px;
-	height: 812px;
+	height: 642px;
 	background-color: #0C4B33;
 	border-radius: 5px;
 	z-index: 11;
