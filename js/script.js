@@ -1,54 +1,6 @@
 ////////////////////modaal//////////////////////////////////
-$(function () {
-	$('.js-open').click(function () {
-		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
 
-		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
-		$('#overlay, .modal-window[data-id="modal' + id + '"]').fadeIn();
-	});
-
-	$('.js-close').click(function () {
-		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
-
-		$('#overlay, .modal-window').fadeOut();
-	});
-});
-
-$(function () {
-	$('.js-open').click(function () {
-		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
-
-		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
-		$('#overlay, .modal-window2[data-id="modal' + id + '"]').fadeIn();
-	});
-
-	$('.js-close').click(function () {
-		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
-		
-		$('#overlay, .modal-window2').fadeOut();
-	});
-});
-
-$(function () {
-	$('.js-open').click(function () {
-		$("body").addClass("no_scroll"); // 背景固定させるクラス付与
-
-		var id = $(this).data('id'); // 何番目のキャプション（モーダルウィンドウ）か認識
-		$('#overlay, .modal-window3[data-id="modal' + id + '"]').fadeIn();
-	});
-
-	$('.js-close').click(function () {
-		$("body").removeClass("no_scroll"); // 背景固定させるクラス削除
-		
-		$('#overlay, .modal-window3').fadeOut();
-	});
-});
 ////////////////////modaal//////////////////////////////////
-
-
-/*===========================================================*/
-/*機能編 4-1-5 ロゴアウトラインアニメーション*/
-/*===========================================================*/
 
 //SVGアニメーションの描画
 var stroke;
@@ -64,22 +16,19 @@ stroke = new Vivus('mask', { //アニメーションをするIDの指定
 	}
 );
 
-/*===========================================================*/
-/*印象編 8-10 テキストがタイピング風に出現*/
-/*===========================================================*/
-
+// /*テキストがタイピング風に出現*/
 // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
 function TextTypingAnime() {
 	$('.TextTyping').each(function () {
 		var elemPos = $(this).offset().top - 50;
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
-		var thisChild = "";
+        var thisChild = "";
 		if (scroll >= elemPos - windowHeight) {
 			thisChild = $(this).children(); //spanタグを取得
 			//spanタグの要素の１つ１つ処理を追加
 			thisChild.each(function (i) {
-				var time = 200;
+				var time = 100;
 				//時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
 				$(this).delay(time * i).fadeIn(time);
 			});
@@ -92,10 +41,6 @@ function TextTypingAnime() {
 		}
 	});
 }
-
-/*===========================================================*/
-/*印象編 5-5 雪が降る*/
-/*===========================================================*/
 /*雪1*/
 particlesJS("pt1", {
 	"particles": {
@@ -271,11 +216,11 @@ particlesJS("pt2", {
 });
 
 $('#wrapper').multiscroll({
-	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33', '#0000ff', '#504237', '#504237'], //セクションごとの背景色設定
-	anchors: ['area1', 'area2', 'area3', 'area4', 'area5', 'area6'], //セクションとリンクするページ内アンカーになる名前
+	sectionsColor: ['#0f7fa7', '#44B78B', '#0C4B33', '#01686D', '#DA536E', '#504237'], //セクションごとの背景色設定
+	anchors: ['top', 'about', 'creation', 'flow', 'price', 'contact'], //セクションとリンクするページ内アンカーになる名前
 	menu: '#menu', //上部ナビゲーションのメニュー設定
 	navigation: true, //右のナビゲーション出現、非表示は false
-	navigationTooltips:['Top', 'About', 'Price', 'Flow', 'Feature'],//右のナビゲーション現在地時に入るテキスト
+	navigationTooltips:['Top', 'About', 'Creation', 'Flow', 'Price','Contact'],//右のナビゲーション現在地時に入るテキスト
 	loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
 	loopBottom: true, //最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
 	//※以下は今回のプラグインの組み合わせのみで使用。ページの途中でリロードしてもトップのタイピング出現

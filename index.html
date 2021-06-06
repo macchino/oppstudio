@@ -13,16 +13,13 @@
   </script>
 	<!--=============Google Font ===============-->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
-	<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet"> -->
-	<!-- Modaal -->
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
 	<!--自作のCSS-->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/parts.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/parts.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/test.css">
 
 
 	<meta name="robots" content="noindex,nofollow">
@@ -51,7 +48,7 @@
 	<meta charset="utf-8">
 
 	<!--=============Google Font ===============-->
-	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> -->
 	<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
 	<!--印象編　6-3　スクロールすると画面分割した左右がそれぞれ動く-->
 	<link rel="stylesheet" type="text/css"
@@ -217,9 +214,12 @@
 		<header id="header">
 			<nav>
 				<ul id="menu">
-					<li data-menuanchor="area1"><a href="#area1">Top</a></li>
-					<li data-menuanchor="area2"><a href="#area2">About</a></li>
-					<li data-menuanchor="area6"><a href="#area6">Contact</a></li>
+					<li data-menuanchor="top"><a href="#top">Top</a></li>
+					<li data-menuanchor="about"><a href="#about">About</a></li>
+					<li data-menuanchor="creation"><a href="#creation">Creation</a></li>
+					<li data-menuanchor="flow"><a href="#flow">Flow</a></li>
+					<li data-menuanchor="price"><a href="#price">Price</a></li>
+					<li data-menuanchor="contact"><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -227,166 +227,62 @@
 		<div id="wrapper">
 
 			<div class="ms-left">
+				<!-- /////////////////Section1///////////////// -->
 				<div class="ms-section" id="left1">
 					<h1 class="TextTyping">Restaurant Specialty WEB Production 「O.P.P STUDIO」 </h1>
 					<div class="particle" id="pt1"></div>
 				</div>
+
+				<!-- /////////////////Section2///////////////// -->
 				<section class="ms-section" id="left2">
 					<div class="sp-top"></div>
 					<div class="sp-bottom">
-						<div class="wrap">
-							<button class="js-open button-open2" data-id="1">View About</button>
-						</div>
+						<a href="#" class="btn bgleft2"><span>About詳細ページ</span></a>
 					</div>
-					<!-- <h2>About</h2> -->
-                    <br>
+					<h2>About</h2>
 					<p class="txt">コロナ禍に翻弄されている飲食業界。
 						<br>現状を打破したい飲食店様に
 						<br>プログラミング・Web制作でお手伝いします。
 					</p>
-					<!-- ////////////////Modaal/////////////////////// -->
-					<!-- オーバーレイ -->
-					<div id="overlay" class="overlay"></div>
-
-					<!-- モーダルウィンドウ1 -->
-					<div class="modal-window" data-id="modal1">
-						<dd class="title txt">名称</dd>
-						<dt class="sentence txt">O.P.P STUDIO</dt>
-						<dd class="title txt">所在地</dd>
-						<dt class="sentence txt">東京・目黒区</dt>
-						<dd class="title txt">事業内容</dd>
-						<dt class="sentence txt">Web制作(Django)におけるディレクション、デザイン、HTML・CSSコーディング<br>
-							スクレイピング、AWS環境構築</dt>
-						<dt class="sentence txt">自然言語処理でのマーケティング、MEO対策、飲食店に係る一切のIT業務、Uber EATS売上対策</dt>
-						<dd class="title txt">使用プログラミング言語</dd>
-						<dt class="sentence txt">HTML&CSS、Javascript、python</dt>
-						<button class="js-close button-close">Close</button>
-					</div>
-
 				</section>
+
+				<!-- /////////////////Section3///////////////// -->
 				<section class="ms-section" id="left3">
 					<div class="sp-top"></div>
 					<div class="sp-bottom">
-						<div class="wrap">
-							<button class="js-open button-open3" data-id="2">View Price</button>
-						</div>
+						<a href="#" class="btn bgleft3 bl1"><span>Web制作詳細ページ</span></a>
 					</div>
 					<h2>Web制作</h2>
 					<p class="txt">YoutubeやInstagramの
 						<br>バックエンドに使われている
 						<br>PythonのWebフレームワークを用い
 						<br>
-						将来の拡張機能を見据えたWEBサイトをお作りします。
+						将来の拡張機能を見据えたホームページ・WEBサイトをお作りします。
 					</p>
-
-					<!-- /////////////////modaal/////////////////		 -->
-					<!-- オーバーレイ -->
-					<div id="overlay" class="overlay"></div>
-					<!-- モーダルウィンドウ2 -->
-					<div class="modal-window2" data-id="modal2">
-						<ul>
-							<li>Web制作</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥29，000～（保守管理￥10，000～）</dt>
-
-						<hr>
-						<ul>
-							<li>フルオーダーWeb制作</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥150,000 ～（保守管理￥8，000～）</dt>
-						<ul>
-							<br>
-							<hr>
-							<li>スクレイピングによるマーケティング</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥5，000～（WordCloudによる可視化　+￥10，000）</dt>
-						<ul>
-							<hr>
-							<li>AWSインフラ環境構築：VPC,EC2,S3,Route53...etc</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥49，000～</dt>
-						<button class="js-close button-close2">Close</button>
-					</div>
-					<!-- /////////////////End Of modaal///////////////// -->
-
 				</section>
+
+				<!-- /////////////////Section4///////////////// -->
 				<section class="ms-section" id="left4">
 					<div class="sp-top"></div>
 					<div class="sp-bottom">
-						<div class="wrap">
-							<button class="js-open button-open4" data-id="3">View Price</button>
-						</div>
+						<a href="#" class="btn bgleft4"><span>納品までの流れ詳細ページ</span></a>
 					</div>
-					<h2>Web制作</h2>
-					<p class="txt">YoutubeやInstagramの
-						<br>バックエンドに使われている
-						<br>PythonのWebフレームワークを用い
-						<br>
-						将来の拡張機能を見据えたWEBサイトをお作りします。
+					<h2>納品までの流れ</h2>
+					<p class="txt">店舗オーナー様のお店への想い、ストーリーを
+						ヒアリングし、ページ構成・デザインを決定いたします。
+						写真撮影、ワイヤーフレームにて仕上がりのご確認。
+						その後納品です。
 					</p>
-
-					<!-- /////////////////modaal/////////////////		 -->
-					<!-- オーバーレイ -->
-					<div id="overlay" class="overlay"></div>
-					<!-- モーダルウィンドウ2 -->
-					<div class="modal-window2" data-id="modal2">
-						<ul>
-							<li>Web制作</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥29，000～（保守管理￥10，000～）</dt>
-
-						<hr>
-						<ul>
-							<li>フルオーダーWeb制作</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥150,000 ～（保守管理￥8，000～）</dt>
-						<ul>
-							<br>
-							<hr>
-							<li>スクレイピングによるマーケティング</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥5，000～（WordCloudによる可視化　+￥10，000）</dt>
-						<ul>
-							<hr>
-							<li>AWSインフラ環境構築：VPC,EC2,S3,Route53...etc</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥49，000～</dt>
-						<button class="js-close button-close2">Close</button>
-					</div>
-					<!-- /////////////////End Of modaal///////////////// -->
-
 				</section>
+
+				<!-- /////////////////Section5///////////////// -->
 				<section class="ms-section" id="left5">
 					<div class="sp-top"></div>
 					<div class="sp-bottom">
-						<div class="wrap">
-							<button class="js-open button-open5" data-id="3">View Price</button>
-						</div>
+						<a href="#" class="btn bgleft5"><span>料金プラン詳細ページ</span></a>
 					</div>
-					<h2>Web制作</h2>
-					<p class="txt">YoutubeやInstagramの
-						<br>バックエンドに使われている
-						<br>PythonのWebフレームワークを用い
-						<br>
-						将来の拡張機能を見据えたWEBサイトをお作りします。
-					</p>
-
-					<!-- /////////////////modaal/////////////////		 -->
-					<!-- オーバーレイ -->
-					<div id="overlay" class="overlay"></div>
-					<!-- モーダルウィンドウ2 -->
-					<div class="modal-window2" data-id="modal2">
-						<ul>
-							<li>Web制作</li>
-						</ul>
+					<h2>料金プラン</h2>
+					<p class="txt">
 						<dd class="title2 txt"> Price:</dd>
 						<dt class="sentence txt">￥29，000～（保守管理￥10，000～）</dt>
 
@@ -396,24 +292,10 @@
 						</ul>
 						<dd class="title2 txt"> Price:</dd>
 						<dt class="sentence txt">￥150,000 ～（保守管理￥8，000～）</dt>
-						<ul>
-							<br>
-							<hr>
-							<li>スクレイピングによるマーケティング</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥5，000～（WordCloudによる可視化　+￥10，000）</dt>
-						<ul>
-							<hr>
-							<li>AWSインフラ環境構築：VPC,EC2,S3,Route53...etc</li>
-						</ul>
-						<dd class="title2 txt"> Price:</dd>
-						<dt class="sentence txt">￥49，000～</dt>
-						<button class="js-close button-close2">Close</button>
-					</div>
-					<!-- /////////////////End Of modaal///////////////// -->
-
+					</p>
 				</section>
+
+				<!-- /////////////////Section6///////////////// -->
 				<section class="ms-section" id="left6">
 					<div class="sp-bottom">
 						<h2>Contact</h2>
@@ -478,7 +360,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.2/jquery.multiscroll.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<!--自作のJS-->
-	<script src="js/script.js"></script>
+	<script src="js/script2.js"></script>
 </body>
 
 </html>
