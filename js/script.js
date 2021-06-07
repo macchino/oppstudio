@@ -14,7 +14,7 @@ stroke = new Vivus('mask', { //アニメーションをするIDの指定
 	function () {
 		$("#mask").attr("class", "done"); //描画が終わったらdoneというクラスを追加
 	}
-);
+)
 
 // /*テキストがタイピング風に出現*/
 // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義

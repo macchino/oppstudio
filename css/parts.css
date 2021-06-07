@@ -25,7 +25,33 @@
 #splash_logo svg {
 	width: 800px;
 }
+/*========= 光りながら出現させるためのCSS ===============*/
 
+.glowAnime span {
+	opacity: 0;
+}
+
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span {
+	animation: glow_anime_on 1s ease-out forwards;
+}
+
+@keyframes glow_anime_on {
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+	}
+
+	50% {
+		opacity: 1;
+		text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+	}
+
+	100% {
+		opacity: 1;
+		text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+	}
+}
 /*=============== SVGアニメーション内の指定 =================*/
 
 /*アニメーション前の指定*/
@@ -337,14 +363,12 @@ body.appear #container {
 
 /* テキストがタイピング風に出現*/
 .TextTyping span {
-	font-family: 'Walter Turncoat',
-		cursive;
+	
 	display: none;
 }
 
 .TextTyping::after {
-	font-family: 'Walter Turncoat',
-		cursive;
+	color: honeydew;
 	content: "|";
 	animation: typinganime .8s ease infinite;
 	font-weight: normal;
@@ -532,5 +556,20 @@ body.appear #container {
 	/* Loading アイコンの大きさ設定　*/
 	#splash_logo svg {
 		width: 250px;
+	}
+	h1 {
+		font-size: 2rem;
+		color: #313deb;
+		font-family: 'Kosugi Maru',
+			sans-serif;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 999;
+		letter-spacing: 0.1em;
+		width: 14em;
+		opacity: 0;
+		/*ローディング画面では透過*/
 	}
 }

@@ -1,0 +1,8 @@
+.home {
+    background-image: url(../img/sunset_table.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.h1 {
+    font-size: small;
+}
